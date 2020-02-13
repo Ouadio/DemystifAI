@@ -1,4 +1,4 @@
-grations/
+migrations/
 __pycache__/
 *.sqlite
 *.h5
