@@ -79,7 +79,10 @@ flask db migrate -m "migration done"
 ```
 flask db upgrade 
 ```
-### 3.Execution  
+### 3.Download the models' weights  
+Download the models weights from this [link](https://www.dropbox.com/s/vyrgkmyptzqscbz/VGG_FNN_Tuned_Weights.h5?dl=0) and place them under the /ML_Models directories.  
+
+### 4.Execution  
 The modular architecture of the project requires running each compounding app seperately, thus, you should first open 2 separate bash command lines, one within the /Web_Apps directory, and the other under /APIs/FLOWERS_RECOGNITION. Once done, run the following command in both CLI :  
 ```
 python app.py  
