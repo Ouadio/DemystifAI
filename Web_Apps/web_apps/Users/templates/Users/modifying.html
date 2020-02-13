@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="jumbotron">
+    <center>
+    <h1>Hello and Welcome to DEMISTIF[AI]</h1>
+    <h3>You can Modify/Delete your account here</h3>
+    </center>
+    
+    </div>
+    
+    <hr/>
+
+    <br>
+    
+    <div class="row align-items-center justify-content-center">
+    <div class="col-md-auto">
+    <form  action="" method="POST" role="form">
+    
+    {{modify_form.hidden_tag()}}
+    {{ modify_form.csrf }}
+    
+    
+ <div class="form-group">
+          <center>
+    	   <hr style="width:100%">
+	       </center>  
+          <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Your New Pseudo">
+            <br>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Your Password">
+          <input type="password" class="form-control" id="password_conf" name="password_conf" placeholder="Your Password Confirmation">
+          
+	    <center>
+	    
+    	   <hr style="width:100%">
+	       </center>  
+	</div>									   
+        <center>
+          {{modify_form.apply(class_="btn btn-success")}}
+        </center>
+        <br>
+      </form>
+      <hr style="width:100%">
+      </div>
+      </div>
+
+    
+    <br>
+    <form method = "POST">
+    {{delete_form.hidden_tag()}}
+    <center>
+    {{delete_form.delete(class_="btn btn-danger")}}
+    <center>
+    </form>
+
+{% endblock %}
+
+
+     

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="jumbotron" style="background:lightgreen !important">
+    <center>
+    <h1>Hello and Welcome to this AI Demo for Flowers Species Recognition</h1>
+    
+    <h2>You can check the list of the species supported here : <a href="{{url_for('Flowers.displayFlowersList')}}">Flowers Species</a></h2>
+    
+    </center>
+    
+    </div>
+    <hr/>
+    
+    <center>
+    
+<form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    
+    {{ form.file(class_="btn btn-success btn-lg") }}
+    <br>
+    <hr style="width:10%">
+    <center>
+    {% if user_image==None %}
+    <img src="/static/sampleFlower.jpg" alt="User Image Not loaded Yet" height="300">
+    {% else %}
+    <img src="{{user_image}}" alt="User Image Not loaded Yet" height="500">
+    {% endif %}
+    </center>
+    <hr style="width:10%">
+    
+    
+    {{ form.submit(class_="btn btn-primary btn-lg") }}
+</form>
+    
+    
+</center>
+
+{% endblock %}

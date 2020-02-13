@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div style="background:lightgreen !important" class="jumbotron">
+    <center>
+    <h1>Hello and Welcome to this AI Demo for Flowers Species Recognition</h1>
+    
+    <h2>You can check the list of the species supported here : <a href="{{url_for('Flowers.displayFlowersList')}}">Flowers Species</a></h2>
+    
+    </center>
+    
+    </div>
+    <hr/>
+    
+    <center>
+
+    <img src="{{user_image}}" alt="User Image Not loaded Yet" height="500">
+
+    <hr style="width:15%">
+    {%for pred in result %}
+    
+    <h2 class="result">Flower Name : {{ pred.get('name') }}</h2>
+    <h3 class="proba">Certainty : {{ pred.get('probability') }}</h3>
+    <hr style="width:15%">
+    <a href={{pred.get('link')}} target="_blank">More informations about {{ pred.get('name') }} </a>
+    <br>
+    {% endfor %}
+    <br>
+    <a href="{{url_for('Flowers.recognition')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Try Another One</a>
+    </center>
+    
+{% endblock %}

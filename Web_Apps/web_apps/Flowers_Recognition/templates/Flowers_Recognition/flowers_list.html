@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div style="background:lightgreen !important" class="jumbotron">
+    <center>
+    <h1>Hello and Welcome to this AI Demo for Flowers Species Recognition</h1>
+    
+    <h2>Bellow the list of the available flower species</h2>
+    
+    </center>
+    
+    </div>
+    
+    
+    
+    <ul class="b">
+    {% for fl in flowers_data %}
+    <li> <a href= {{fl.get('link')}} target="_blank"> {{ fl.get('name') }}  </a></li>
+    {% endfor %}
+    </ul>
+
+
+
+
+
+
+{% endblock %}

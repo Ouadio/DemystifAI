@@ -1,0 +1,4 @@
+grations/
+__pycache__/
+*.sqlite
+*.h5

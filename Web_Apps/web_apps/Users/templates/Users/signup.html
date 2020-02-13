@@ -1,0 +1,69 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div style="background-color:lightgreen">
+    <br>
+            
+            
+    <div class="container"><br>
+    <div class="row align-items-center justify-content-center">
+    <div class="col-md-auto">
+      <form  action="" method="POST" role="form">
+      {{signup_form.hidden_tag()}}
+        {{ signup_form.csrf }}
+        <div class="form-group">
+        <center>
+    	   <hr style="width:100%">
+	       </center>  
+        
+
+          <input type="text" class="form-control" id="name" name="name" placeholder="Your Full Name">
+    	    <br>
+
+          <input type="text" class="form-control" id="email" name="email" placeholder="Your Email Adress">
+            <br>
+            
+
+          <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Your PseudoName">
+    	    <br>
+    	   
+
+          <input type="text" class="form-control" id="birthdate" name="birthdate" placeholder="Your BirthDate">
+    	    <br>
+    	    
+
+          <input type="password" class="form-control" id="password" name="password" placeholder="Your Password">
+    	    <br>
+
+          <input type="password" class="form-control" id="password_conf" name="password_conf" placeholder="Re-type Your Password">
+    	   <center>
+    	   <hr style="width:100%">
+	       </center>   
+    	    
+	</div>
+            
+    <center>
+            <br>
+            
+            {{signup_form.create(class_="btn btn-primary")}}
+    
+    
+    </center>
+          </form>
+          <br>
+      </div>
+      </div>
+      </div>
+      </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
