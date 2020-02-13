@@ -11,9 +11,9 @@
 - Register, Sign in, Enjoy the ML apps!  
 
 Screenshots  :
-![](screenshots/Screenshot1.png)  
+![](/screenshots/screenshot1.png)  
 
-![](screenshots/Screenshot2.png)  
+![](screenshots/screenshot2.png)  
 
 ---
 ## Local installation  
