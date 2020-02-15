@@ -8,14 +8,16 @@ from flask import Flask
 #RestAPI
 from flask_restful import Api
 
+#utilities
 import os
 import pandas as pd
+
+#App configuration
+from config import DevConfig
 
 #ORM & Migration
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-
-
 
 #Rest Authentication
 from flask_jwt import JWT
@@ -25,6 +27,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 #Flask App
 app = Flask(__name__)
+app.config.from_object(DevConfig)
 app.config["SECRET_KEY"] = "winux"
 
 #Data Base Configuration

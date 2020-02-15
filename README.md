@@ -51,7 +51,7 @@ conda activate myEnvName
 ```
 Install the requirements for the project *(Some of them are already installed with Flask but that's ok)* *  
 ```
-conda install requirements.txt  
+conda install -r requirements.txt  
 ```
 **Make sure you're in the project directory*  
 

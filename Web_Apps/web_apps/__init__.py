@@ -4,8 +4,10 @@ from flask import Flask
 #ORM & Migration
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-
+#utilities
 import os
+#App configuration
+from config import DevConfig
 
 #Login : User Authentication 
 from flask_login import LoginManager
@@ -18,6 +20,7 @@ bcrypt = Bcrypt()
 app  = Flask(__name__)
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
+app.config.from_object(DevConfig)
 app.config["SECRET_KEY"] = "winux"
 app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 app.config['BASE_DIR'] = base_dir
