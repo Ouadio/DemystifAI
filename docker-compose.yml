@@ -1,0 +1,45 @@
+version: "2"
+
+networks:
+    app-net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.29.0.0/16
+
+services:
+    web-apps:
+        build:
+            context: ./Web_Apps
+            dockerfile: Dockerfile
+        command: python3 app.py
+        container_name: "demystifAI-web-apps"
+        image: demystifai-web-apps
+        ports:
+            - "8080:8080"
+        restart: always
+        stdin_open: false
+        tty: false
+        user: ${UID}:${GID}
+        volumes:
+            - ./Web_Apps/:/usr/src/app
+        networks:
+            - app-net
+
+    flowers-recognition:
+        build:
+            context: ./APIs/FLOWERS_RECOGNITION
+            dockerfile: Dockerfile
+        command: python3 app.py
+        container_name: "demystifAI-flowers-recognition"
+        image: demystifai-flowers-recognition
+        ports:
+            - "5000:5000"
+        restart: always
+        stdin_open: false
+        tty: false
+        user: ${UID}:${GID}
+        volumes:
+            - ./APIs/FLOWERS_RECOGNITION/:/usr/src/app
+        networks:
+            - app-net
